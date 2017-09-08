@@ -1,0 +1,7 @@
+{
+  imageUrl: "https://weatherimage.com",
+  forecast: [
+    {date: }
+  ]
+
+}
