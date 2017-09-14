@@ -53,3 +53,12 @@ Things to think about:
 - Let's write some user stories!
 **"As a user..."**
 **"When I click, I expect"**
+
+
+- Starting point:
+  - https://firebase.googleblog.com/2016/01/the-beginners-guide-to-react-native-and_84.html
+
+
+- Environment variables:
+https://github.com/zetachang/react-native-dotenv
+*WARNING: DONT PUT .env in GIT!!!!*
