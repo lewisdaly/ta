@@ -16,8 +16,8 @@ class WeatherRow extends Component {
 }
 
 WeatherRow.propTypes = {
-  day: PropTypes.string,
-  forecast: PropTypes.number
+  day: PropTypes.string.isRequired,
+  forecast: PropTypes.number.isRequired
 }
 
 export default WeatherRow;

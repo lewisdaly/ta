@@ -1,6 +1,7 @@
 #Plan for today:
 
 ## Housekeeping
+git: https://github.com/lewisdaly/ta
 - Group Consultations (30 mins or so, next Wednesday?)
 
 

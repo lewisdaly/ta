@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, FlatList, SegmentedControlIOS } from 'react-native';
 
-
-import WeatherRow from './WeatherRow';
-
+import WeatherList from './WeatherList';
 
 const temperatureType = {
   C: 0,
   F: 1,
+  K: 2
 };
 
 const forecastsF = [
@@ -26,6 +25,14 @@ const forecastsC = [
   {day: 'Tuesday', temp: 27},
 ];
 
+const forecastsK = [
+  {day: 'Today', temp: 313.15},
+  {day: 'Tomorrow', temp: 313.15},
+  {day: 'Sunday', temp: 313.15},
+  {day: 'Monday', temp: 313.15},
+  {day: 'Tuesday', temp: 313.15},
+];
+
 /**
  * The WeatherScreen component will serve as the base for displaying all of our weather components
  */
@@ -41,25 +48,11 @@ class WeatherScreen extends Component {
     };
   }
 
-  getWeatherRow(item, index) {
-    const backgroundColor = index % 2 == 0 ? 'powderblue' : 'red';
-
-    return (
-      <WeatherRow
-        style={{width:250, backgroundColor}}
-        key={item.day}
-        day={item.day}
-        forecast={item.temp}
-      />
-    );
-  }
-
   getImageForForecast() {
     return "http://placekitten.com.s3.amazonaws.com/homepage-samples/200/287.jpg";
   }
 
   getSettings() {
-
     const selectedIndex = this.state.displayTemp === temperatureType.C ? 0 : 1;
 
     return (
@@ -87,17 +80,17 @@ class WeatherScreen extends Component {
 
   render() {
 
-    return(
+    const style = {backgroundColor: 'red', flex: 0.65};
+
+    return (
       <View style={{flex:1}}>
         <View style={{backgroundColor: 'powderblue', flex: 0.25}}>
           <Text style={{textAlign: 'center', fontSize: 20, margin:40}}>TODO: Pretty image </Text>
         </View>
-        <View style={{backgroundColor: 'steelblue', flex: 0.65}}>
-            <FlatList
-              keyExtractor={(item, index) => item.day}
-              data={this.state.forecasts}
-              renderItem={({item, index}) => this.getWeatherRow(item, index)}
-            />
+        <View style={style}>
+          <WeatherList
+            forecasts={this.state.forecasts}
+          />
         </View>
         <View style={{backgroundColor: 'skyblue', flex: 0.10}}>
           <Text style={{textAlign: 'center', fontSize: 12}}>Settings:</Text>
