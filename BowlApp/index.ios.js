@@ -35,15 +35,16 @@ export default class BowlApp extends Component {
 
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows([{ title: 'Lewis' }]),
+      dataSource: ds.cloneWithRows([{ title: 'Lewis', value:"-15" }]),
     };
   }
 
   renderItem(item) {
-    console.log("rendering", item);
-
     return (
-      <ListItem title={item.title}/>
+      <ListItem
+        title={item.title}
+        value={item.value}
+      />
     );
   }
 
@@ -56,7 +57,7 @@ export default class BowlApp extends Component {
           renderRow={(rowData) => this.renderItem(rowData)}
           // renderRow={this.renderItem.bind(this)}
         />
-        <ActionButton title="Add" />
+        <ActionButton title="Add Person" />
       </View>
     );
   }

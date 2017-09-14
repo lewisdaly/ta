@@ -10,6 +10,7 @@ class ListItem extends Component {
       <TouchableHighlight>
         <View style={styles.li}>
           <Text style={styles.liText}>{this.props.title}</Text>
+          <Text style={styles.liText}>${this.props.value}</Text>
         </View>
       </TouchableHighlight>
     );
@@ -19,6 +20,7 @@ class ListItem extends Component {
 
 ListItem.propTypes = {
   title: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default ListItem;
