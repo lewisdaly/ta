@@ -39,5 +39,17 @@ Things to think about:
 
 
 ### Build an app with firebase + react native
-- Bowl app
-  -
+
+- The problem:
+  - We have a bowl where employees can pay $1 for kitkats or coke
+  - We often also borrow from the bowl to pay for lunch every now and then
+  - The current method of managing employee bowl debt is archaic, and could be greatly improved.
+
+- The app:
+  - Simple bowl debt app.
+  - Employees can download the app, and see how much each employee owes the bowl
+  - They can then increase or decrease their debt when they borrow or pay back to the bowl
+
+- Let's write some user stories!
+**"As a user..."**
+**"When I click, I expect"**
