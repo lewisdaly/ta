@@ -46,6 +46,12 @@ export default class BowlApp extends Component {
     this.listenForItems(this.itemsRef);
   }
 
+  changeValue(id, delta) {
+    //Find the item by id, and save the new value
+
+    console.log(`Changing: ${id}, by value: ${delta}`);
+  }
+
   addPerson() {
     AlertIOS.prompt(
       'Add a new person',
@@ -67,7 +73,7 @@ export default class BowlApp extends Component {
       // get children as an array
       var items = [];
       snap.forEach((child) => {
-        console.log("child", child.val());
+        console.log("child", child);
         items.push({
           title: child.val().name,
           value: child.val().value,
@@ -84,10 +90,13 @@ export default class BowlApp extends Component {
   }
 
   renderItem(item) {
+    console.log(item._key);
     return (
       <ListItem
+        _key={item._key}
         title={item.title}
         value={item.value}
+        changeValue={(key, delta) => this.changeValue(key, delta)}
       />
     );
   }
