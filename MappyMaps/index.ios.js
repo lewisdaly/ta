@@ -17,6 +17,7 @@ export default class MappyMaps extends Component {
       <View style={styles.container}>
         <StatusBar title="Mappy Maps"/>
         <MapView
+          style={styles.map}
           initialRegion={{
             latitude: 37.78825,
             longitude: -122.4324,
