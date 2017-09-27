@@ -15,4 +15,5 @@ react-native link react-native-maps   #link the native dependencies
 
 
 - connect with maps, geolocation
+- naive search and filter
 - React Native + Camera!
