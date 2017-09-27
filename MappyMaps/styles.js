@@ -6,7 +6,7 @@ const constants = {
 
 var styles = StyleSheet.create({
   map: {
-    ...StyleSheet.absoluteFillObject,
+    flex:1
   },
   container: {
     backgroundColor: '#f2f2f2',

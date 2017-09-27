@@ -14,11 +14,20 @@ react-native link react-native-maps   #link the native dependencies
 
 
 *Checkpoint 1: broken maps, Native component for "AIRMap" does not exist*
-git checkout wk_4_1
+`git checkout wk_4_1`
 
-The fix? Starting again after linking the binaries ;)
+- The fix? Starting again after linking the binaries ;)
 
-However, now there is nothing showing!
+*Checkpoint 2: geolocation*
+- Let's add a button to find the user's current position
+
+- Now, we need to configure the permissions for Android an iOS respectively
+https://facebook.github.io/react-native/docs/geolocation.html
+
+> Geolocation is enabled by default when you create a project with react-native init. (for iOS)
+
+Hooray!
+
 
 
 
