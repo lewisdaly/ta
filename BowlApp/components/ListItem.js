@@ -7,8 +7,6 @@ const styles = require('../styles.js')
 class ListItem extends Component {
 
   render() {
-    console.log("key is: ", this.props);
-
     return (
       <TouchableHighlight>
         <View style={styles.li}>

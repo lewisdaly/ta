@@ -6,6 +6,8 @@
   - Let's say Wednesday or Thursday for now, but this may have to change
   - TODO: Set some times, probably similar to last week
 
+lewisdaly@me.com
+
 
 ## Session
 
