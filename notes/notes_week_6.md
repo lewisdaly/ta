@@ -24,4 +24,7 @@ QR Code Scanner App
       yarn add react-native-camera
       react-native link
       ```
+
+  - Install on device to get camera working
+    - npm install -g exp
   - demontstrate simple zapier integration

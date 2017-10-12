@@ -7,6 +7,7 @@ import {
   View
 } from 'react-native';
 import QRCode from 'react-native-qrcode';
+import QRCodeScanner from 'react-native-qrcode-scanner';
 
 
 export default class App extends Component<{}> {
@@ -15,6 +16,7 @@ export default class App extends Component<{}> {
     super(props);
 
     this.state = {
+      isReadingCode: false,
       isShowingCode: false,
       qrContent: JSON.stringify({username:'lewis', date: Date.now(), eventId: 123})
     };
@@ -53,13 +55,34 @@ export default class App extends Component<{}> {
     );
   }
 
-  getReadSection() {
+  getReader() {
+    const { isReadingCode } = this.state;
+
+    if (!isReadingCode) {
+      return null;
+    }
+
     return (
-      <Button
-        onPress={() => console.log('time to read!')}
-        title="Read Code"
-        color="#00F"
+      <QRCodeScanner
+        onRead={(content) => console.log(content)}
       />
+    );
+  }
+
+  getReadSection() {
+    const { isReadingCode } = this.state;
+    const title = isReadingCode ? 'Hide' : 'Read Code';
+
+
+    return (
+      <View>
+        {this.getReader()}
+        <Button
+          onPress={() => this.setState({isReadingCode: !isReadingCode})}
+          title={title}
+          color="#00F"
+        />
+      </View>
     );
   }
 
