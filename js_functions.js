@@ -9,10 +9,28 @@ const findMax = (list) => {
     },-1000000);
 };
 
+
+const add = (list) => {
+	//Reducer, combine into 1 value
+	return list.reduce((accumulator, current) => {
+
+		return accumulator + current;
+	}, 0);
+};
+
+const addOld = (list) => {
+	let current = 0;
+	for (var i = 0; i < list.length; i++) {
+		current += list[i];
+	}
+
+	return current;
+}
+
 const findAboveValue = (list, threshold) => {
   //filter. filter out values
   return list.filter(item => {
-    return item > threshold;
+    return item >= threshold;
   });
 };
 
@@ -21,10 +39,10 @@ console.log(findAboveValue(mylist, 3));
 
 
 const myHobbits = [
-  {name:'Frodo', id: 1},
-  {name:'Samwise', id: 2},
-  {name:'Bilbo', id: 3},
-  {name:'Merry', id: 4},
+  {age:44,name:'Frodo', id: 1},
+  {age:36,name:'Samwise', id: 2},
+  {age:111,name:'Bilbo', id: 3},
+  {age:35,name:'Merry', id: 4},
 ];
 
 const mapHobbits = (list, property) => {
@@ -49,10 +67,19 @@ const mapHobbitsAndFilterId = (list, threshold) => {
     .filter(item => item > threshold);
 };
 
+const findAverageHobbitAge = (list) => {
+	if (list.length === 0) {
+		throw new Error("Hobbit list cannot be empty!");
+	}
+
+	return list.map(item => item.age)
+		.reduce((acc, curr) => acc + curr)/list.length;
+}
+
 console.log(mapHobbitsAndFilterId(myHobbits, 2));
 
 
-const result = myHobbits.forEach(hobbit => {
+const result2 = myHobbits.forEach(hobbit => {
   console.log("hobbit's name is: ", hobbit.name);
 });
 
