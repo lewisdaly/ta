@@ -15,5 +15,7 @@
 
 QR Code Scanner App
   - present/generate a QR code
+    - https://github.com/cssivision/react-native-qrcode
   - read a qr code
+    - https://github.com/moaazsidat/react-native-qrcode-scanner
   - demontstrate simple zapier integration

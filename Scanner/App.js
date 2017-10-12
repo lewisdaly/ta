@@ -6,6 +6,8 @@ import {
   Text,
   View
 } from 'react-native';
+import QRCode from 'react-native-qrcode';
+
 
 export default class App extends Component<{}> {
 
@@ -17,17 +19,37 @@ export default class App extends Component<{}> {
     };
   }
 
-  getShowSection() {
+  getQRCode() {
     const { isShowingCode } = this.state;
 
+    if (!isShowingCode) {
+      return null;
+    }
+
+
+    return (
+      <QRCode
+        value={"HELLO"}
+        size={200}
+        bgColor='purple'
+        fgColor='white'
+      />
+    );
+  }
+
+  getShowSection() {
+    const { isShowingCode } = this.state;
     const title = isShowingCode ? 'Hide' : 'Show Code';
 
     return (
-      <Button
-        onPress={() => this.setState({isShowingCode: !isShowingCode})}
-        title={title}
-        color="#841584"
-      />
+      <View>
+        {this.getQRCode()}
+        <Button
+          onPress={() => this.setState({isShowingCode: !isShowingCode})}
+          title={title}
+          color="#841584"
+        />
+      </View>
     );
   }
 
