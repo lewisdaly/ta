@@ -52,5 +52,9 @@
 			</dict>
 		</dict>
 	</dict>
+
+	<key>NSCameraUsageDescription</key>
+	<string>We need the camera man.</string>
+
 </dict>
 </plist>

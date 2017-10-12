@@ -15,21 +15,21 @@ export default class App extends Component<{}> {
     super(props);
 
     this.state = {
-      isShowingCode: false
+      isShowingCode: false,
+      qrContent: JSON.stringify({username:'lewis', date: Date.now(), eventId: 123})
     };
   }
 
   getQRCode() {
-    const { isShowingCode } = this.state;
+    const { isShowingCode, qrContent } = this.state;
 
     if (!isShowingCode) {
       return null;
     }
 
-
     return (
       <QRCode
-        value={"HELLO"}
+        value={qrContent}
         size={200}
         bgColor='purple'
         fgColor='white'
@@ -53,12 +53,21 @@ export default class App extends Component<{}> {
     );
   }
 
+  getReadSection() {
+    return (
+      <Button
+        onPress={() => console.log('time to read!')}
+        title="Read Code"
+        color="#00F"
+      />
+    );
+  }
 
   render() {
     return (
       <View style={styles.container}>
         {this.getShowSection()}
-
+        {this.getReadSection()}
       </View>
     );
   }
