@@ -14,6 +14,6 @@
 ## Demo Project
 
 QR Code Scanner App
-- present/generate a QR code
-- read a qr code
-- demontstrate simple zapier integration
+  - present/generate a QR code
+  - read a qr code
+  - demontstrate simple zapier integration
