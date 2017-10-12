@@ -1,7 +1,4 @@
 {
   "name": "Scanner",
-  "displayName": "Scanner",
-  "expo": {
-    "sdkVersion": "21.0.0"
-  }
+  "displayName": "Scanner"
 }

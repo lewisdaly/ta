@@ -7,7 +7,6 @@
 		"test": "jest"
 	},
 	"dependencies": {
-		"expo": "^21.0.0",
 		"react": "16.0.0-beta.5",
 		"react-native": "0.49.3",
 		"react-native-camera": "^0.10.0",
@@ -17,10 +16,10 @@
 	"devDependencies": {
 		"babel-jest": "21.2.0",
 		"babel-preset-react-native": "4.0.0",
-		"jest-expo": "^21.0.2",
+		"jest": "21.2.1",
 		"react-test-renderer": "16.0.0-beta.5"
 	},
 	"jest": {
-		"preset": "jest-expo"
+		"preset": "react-native"
 	}
 }
