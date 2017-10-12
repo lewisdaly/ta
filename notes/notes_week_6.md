@@ -27,4 +27,12 @@ QR Code Scanner App
 
   - Install on device to get camera working
     - npm install -g exp
-  - demontstrate simple zapier integration
+
+  - demonstrate simple zapier integration
+
+		webhook url: https://hooks.zapier.com/hooks/catch/2292424/i19xs4/
+		test:
+```
+curl 'https://hooks.zapier.com/hooks/catch/2292424/i19xs4/?username=lewis&date=12345&eventId=1'
+
+```

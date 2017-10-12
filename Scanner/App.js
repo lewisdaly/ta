@@ -10,6 +10,10 @@ import QRCode from 'react-native-qrcode';
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
 
+//this should be in a config file
+const WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/2292424/i19xs4/';
+
+
 export default class App extends Component<{}> {
 
   constructor(props) {
@@ -82,9 +86,33 @@ export default class App extends Component<{}> {
           title={title}
           color="#00F"
         />
+        <Button
+          onPress={() => this.uploadScan(this.state.qrContent)}
+          title="Mock Scan!"
+          color="#00F"
+        />
       </View>
     );
   }
+
+	//Once we have scanned, upload to zapier webhook
+	uploadScan(content) {
+    const payload = JSON.parse(content);
+    //This is a simple way to build a url, but not the best
+    const url = `${WEBHOOK_URL}?username=${payload.username}&date=${payload.date}&eventId=${payload.eventId}`
+
+    return fetch(url)
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson);
+        //TODO: alert
+
+        return;
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+	}
 
   render() {
     return (
